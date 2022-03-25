@@ -3,10 +3,11 @@ import {
   Routes,
   Route
 } from "react-router-dom";
-import Navbar from './Navbar'
-import Home from './Home'
+import Navbar from './Navbar';
+import Home from './Home';
 import Create from "./Create";
 import BlogDetails from "./BlogDetails";
+import NotFound from "./NotFound";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/create" element={<Create />} />
             <Route path="/blogs/:id" element={<BlogDetails />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
       </div>
@@ -29,3 +31,4 @@ export default App;
 
 // json server package
 // npx json-server --watch data/db.json --port 8000
+// "start:server": "json-server --watch data/db.json --port 8000",
